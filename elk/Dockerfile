@@ -15,5 +15,5 @@ ADD 5001-squid-filter.conf /etc/logstash/conf.d/5001-squid-filter.conf
 ADD 9001-logstash-output.conf /etc/logstash/conf.d/9001-logstash-output.conf
 
 RUN mkdir -p /usr/share/GeoIP && \ 
-	curl -sSL http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz -o /usr/share/GeoIP/GeoLiteCity.dat.gz && \
-	gunzip /usr/share/GeoIP/*.gz 
+	curl -sSL http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz -o /usr/share/GeoIP/GeoLiteCity.tar.gz && \
+	tar xzvf GeoLite2-City.tar.gz --strip-components=1
